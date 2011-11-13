@@ -79,6 +79,8 @@ function procCmnds( input ) {
 }
 
 function Brainfuck( opts ) {
+    var opts = opts || {};
+    this.debug = ("debug" in opts) ? opts.debug : false;
 
     this.run = function( data_str ) {
         var str = data_str || "";
@@ -94,10 +96,11 @@ function Brainfuck( opts ) {
         this.data_out = [];
         this.lStop = [];
         this.instr_pntr = 0;
+        console.log("Brainfuck.js", "Run the interpreter");
         console.log("processing this data:", this.input_commands);
         while(this.instr_pntr < this.input_commands.length) {
             procCmnds.call( this, this.input_commands[ this.instr_pntr ] );
-            console.log("runs", this.instr_pntr, this.cell, this.data_out);
+            if(this.debug) console.log("runs", this.instr_pntr, this.cell, this.data_out);
             this.instr_pntr += 1;
 
         }
