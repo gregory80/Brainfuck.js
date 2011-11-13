@@ -12,3 +12,19 @@ module.exports = {
     }
 
 }
+function main() {
+
+    process.stdin.resume();
+    process.stdin.on("data", function(chunk) {
+        console.log( textToFuck( chunk+"" ) );
+    });
+    process.stdin.on('end', function () {
+        process.stdout.write('end');
+        process.exit();
+    });
+    
+
+}
+if(require.main === module) {
+    main();
+}
