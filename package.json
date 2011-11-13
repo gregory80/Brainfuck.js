@@ -1,0 +1,8 @@
+{
+    "name":"BrainFuck",
+    "main":"src/brainfuck.js",
+    "version":"0.0.1",
+    "requre":{
+        "optimist":">=0.2.6"
+    }
+}
