@@ -6,6 +6,7 @@
 // +-<>[],.
 
 var not_brainkfuck_commands = /[^+\-\<\>\[\]\,\.]/gmi;
+var is_brainfuck_commands = /[+\-\<\>\[\]\,\.]/gmi;
 
 function killNoCommands( input ) {
     return input.replace( not_brainkfuck_commands, "" );

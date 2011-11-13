@@ -1,6 +1,6 @@
 
 
-function textToFuck( input ) {
+function simpleTextToBrainFuck( input ) {
     var tmp = convertToCharCodes( input );
     var items = simpleBrainFuckCommands( tmp );
     
@@ -8,7 +8,11 @@ function textToFuck( input ) {
     var text_str = items.join("\r\n");
     return text_str;
 }
-module.exports = textToFuck;
+
+module.exports = {
+    simple:simpleTextToBrainFuck,
+    optimized:null
+};
 
 function convertToCharCodes( input ) {
     var char_arr = [];

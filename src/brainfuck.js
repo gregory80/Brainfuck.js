@@ -8,7 +8,7 @@ module.exports = {
         return bf.run(data);
     },
     convertStringSimple:function( str ) {
-        return textToFuck( str );
+        return textToFuck.simple( str );
     }
 
 }
